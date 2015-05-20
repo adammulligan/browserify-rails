@@ -172,7 +172,7 @@ class BrowserifyTest < ActionController::IntegrationTest
     get "/assets/main.js"
 
     assert_response :success
-    assert_equal expected_output, @response.body.strip
+    assert_equal expected_output.to_s, @response.body.strip.to_s
   end
 
   test "uses config/browserify.yml for browserification options" do
